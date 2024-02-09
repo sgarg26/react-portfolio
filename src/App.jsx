@@ -12,22 +12,34 @@ const asciiArt = [
 ].join("\n");
 
 //prettier-ignore
-const DefaultPrompt = () => {
+const InitPrompt = () => {
     return (
         <>
-            <p className="container-fluid" id="defaultPrompt">
+            <div className="container" id="initPrompt">
                 <br />
                 Welcome to Siddharth's Portfolio. Type 'help' to see all
                 available commands <br/> <br/>
-                <pre><code>{asciiArt}</code></pre>
-            </p>
+                <pre>{asciiArt}</pre><br /> <br />
+            </div>
         </>
+    );
+};
+
+const DefaultPrompt = () => {
+    return (
+        <div id="defaultPrompt" className="container">
+            <span>~ via Siddharth's Portfolio</span>
+            <br />
+            <i className="bi bi-arrow-return-right"> </i>
+            <input type="text" id="queryBox" />
+        </div>
     );
 };
 
 const TermWindow = () => {
     return (
         <div className="container-lg" id="term-window">
+            <InitPrompt />
             <DefaultPrompt />
         </div>
     );

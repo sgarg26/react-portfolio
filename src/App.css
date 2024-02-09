@@ -39,8 +39,20 @@ pre {
     padding: 0;
 }
 
-#defaultPrompt {
+#initPrompt {
     color: #cc7722;
+}
+
+#defaultPrompt {
+    color: greenyellow;
+}
+
+#queryBox {
+    background: none;
+    border: none;
+    outline: none;
+    caret-color: white;
+    color: white;
 }
 
 #term-window {
