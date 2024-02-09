@@ -32,6 +32,17 @@ body {
     z-index: 2;
 }
 
+pre {
+    margin: 0;
+    display: inline;
+    /* border: 1px solid green; */
+    padding: 0;
+}
+
+#defaultPrompt {
+    color: #cc7722;
+}
+
 #term-window {
     opacity: 90%;
     border-radius: 20px;

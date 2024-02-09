@@ -1,22 +1,37 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
-import './App.css'
+import "./App.css";
 
-function DefaultPrompt() {
+const asciiArt = [
+    "██████╗  █████╗ ███████╗██╗  ██╗",
+    "██╔══██╗██╔══██╗██╔════╝██║  ██║",
+    "██████╔╝███████║███████╗███████║",
+    "██╔══██╗██╔══██║╚════██║██╔══██║",
+    "██████╔╝██║  ██║███████║██║  ██║",
+    "╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝",
+].join("\n");
+
+//prettier-ignore
+const DefaultPrompt = () => {
     return (
         <>
-            <p>Welcome to Siddharth's Portfolio. Type 'help' to see all available commands</p>
+            <p className="container-fluid" id="defaultPrompt">
+                <br />
+                Welcome to Siddharth's Portfolio. Type 'help' to see all
+                available commands <br/> <br/>
+                <pre><code>{asciiArt}</code></pre>
+            </p>
         </>
-    )
-}
+    );
+};
 
-function TermWindow() {
+const TermWindow = () => {
     return (
         <div className="container-lg" id="term-window">
             <DefaultPrompt />
         </div>
-    )
-}
+    );
+};
 
 function App() {
     useEffect(() => {
@@ -25,24 +40,23 @@ function App() {
             mouseControls: false,
             touchControls: true,
             gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
+            minHeight: 200.0,
+            minWidth: 200.0,
+            scale: 1.0,
+            scaleMobile: 1.0,
             color: 0xa43f3f,
-            backgroundColor: 0x201f29
-        })
-    }, [])
+            backgroundColor: 0x201f29,
+        });
+    }, []);
 
     return (
         <>
             <div className="vantaBg" id="vanta-bg"></div>
             <div className="screen">
-                <TermWindow/>
+                <TermWindow />
             </div>
-
         </>
-    )
+    );
     // const [count, setCount] = useState(0)
 
     /*return (
@@ -71,4 +85,4 @@ function App() {
     )*/
 }
 
-export default App
+export default App;
