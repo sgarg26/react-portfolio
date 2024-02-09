@@ -2,6 +2,21 @@ import { useEffect, useState } from 'react'
 
 import './App.css'
 
+function DefaultPrompt() {
+    return (
+        <>
+            <p>Welcome to Siddharth's Portfolio. Type 'help' to see all available commands</p>
+        </>
+    )
+}
+
+function TermWindow() {
+    return (
+        <div className="container-lg" id="term-window">
+            <DefaultPrompt />
+        </div>
+    )
+}
 
 function App() {
     useEffect(() => {
@@ -20,7 +35,13 @@ function App() {
     }, [])
 
     return (
-        <div className="vantaBg" id="vanta-bg"></div>
+        <>
+            <div className="vantaBg" id="vanta-bg"></div>
+            <div className="screen">
+                <TermWindow/>
+            </div>
+
+        </>
     )
     // const [count, setCount] = useState(0)
 
