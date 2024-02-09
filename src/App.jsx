@@ -11,19 +11,34 @@ const asciiArt = [
     "╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝",
 ].join("\n");
 
-//prettier-ignore
 const InitPrompt = () => {
     return (
         <>
             <div className="container" id="initPrompt">
                 <br />
                 Welcome to Siddharth's Portfolio. Type 'help' to see all
-                available commands <br/> <br/>
-                <pre>{asciiArt}</pre><br /> <br />
+                available commands <br /> <br />
+                <pre>{asciiArt}</pre>
+                <br /> <br />
             </div>
         </>
     );
 };
+
+function clear() {}
+
+function printHelp() {
+    return <div>Hello there</div>;
+}
+
+function handleCmdEntered(event) {
+    if (event.key == "Enter") {
+        let cmd = event.target.value;
+        if (cmd === "clear") {
+            clear();
+        }
+    }
+}
 
 const DefaultPrompt = () => {
     return (
@@ -31,7 +46,7 @@ const DefaultPrompt = () => {
             <span>~ via Siddharth's Portfolio</span>
             <br />
             <i className="bi bi-arrow-return-right"> </i>
-            <input type="text" id="queryBox" />
+            <input type="text" id="queryBox" onKeyUp={handleCmdEntered} />
         </div>
     );
 };
